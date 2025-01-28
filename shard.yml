@@ -1,0 +1,13 @@
+name: hirondelle
+version: 0.1.0
+
+authors:
+  - Jade D. Kharats <jade.kharats@gmail.com>
+
+crystal: '>= 1.14.0'
+
+license: MIT
+
+dependencies:
+  pg:
+    github: will/crystal-pg

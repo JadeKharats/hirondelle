@@ -1,0 +1,24 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: hirondelle_postgres
+    environment:
+      POSTGRES_USER: hirondelle_user
+      POSTGRES_PASSWORD: hirondelle_password
+      POSTGRES_DB: hirondelle_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - hirondelle_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - hirondelle_network
+
+volumes:
+  hirondelle_data:
+    name: hirondelle_data
+
+networks:
+  hirondelle_network:
+    name: hirondelle_network
+    driver: bridge
